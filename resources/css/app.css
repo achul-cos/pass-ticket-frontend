@@ -5,7 +5,67 @@
 @source '../**/*.blade.php';
 @source '../**/*.js';
 
+@plugin "flyonui";
+@import "../../node_modules/flyonui/variants.css"; /* Require only if you want to use FlyonUI JS component */
+
+@import '../../node_modules/aos/dist/aos.css';
+
+@font-face {
+    font-family: 'Plus-Jakarta-Sans';
+    src: url("../fonts/PlusJakartaSans-VariableFont_wght.ttf") format("truetype");
+
+    /* 
+    ExtraLight 200
+    Light 300
+    Regular 400
+    Medium 500
+    SemiBold 600
+    Bold 700
+    ExtraBold 800 
+    */
+
+}
+
+@font-face {
+    font-family: 'Plus-Jakarta-Sans-Italis';
+    src: url("../fonts/PlusJakartaSans-Italic-VariableFont_wght.ttf") format("truetype");
+
+    /*
+    ExtraLight 200 Italic
+    Light 300 Italic
+    Regular 400 Italic
+    Medium 500 Italic
+    SemiBold 600 Italic
+    Bold 700 Italic
+    ExtraBold 800 Italic    
+    */
+}
+
 @theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    --font-sans: 'Plus-Jakarta-Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-italic: 'Plus-Jakarta-Sans-Italis';
+    --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+    --color-yellow: #FAB12F;
+    --color-orange: #FA812F;
+    --color-white: #FEF3E2;
+    --color-aqua: #73C8D2;
+    --color-blue: #0546d8;
+    --color-black: #3A3023;
+    --color-dark: #9e6111;
+}
+
+@layer base {
+  input[type="password"]::-ms-reveal,
+  input[type="password"]::-ms-clear {
+    display: none;
+  }
+
+  input[type="password"]::-webkit-textfield-decoration-container {
+    display: none;
+  }
+
+  input[type="password"]::-moz-password-toggle {
+    display: none;
+  }
 }
