@@ -15,3 +15,6 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', Login::class)->name('login');
+Route::get('/loading', Loading::class)->name('loading');
+Route::get('/beranda', Beranda::class)->name('beranda');
+Route::get('/rinciantiket', RincianTiket::class)->name('rincian-tiket');
