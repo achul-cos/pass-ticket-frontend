@@ -8,6 +8,8 @@ class Profil extends Component
 {
     public $ticketSayaTab = "menungguVerifikasi";
 
+    public bool $myModal1 = false;
+
     public function setTicketSayaTab ($tab)
     {
         $this->ticketSayaTab = $tab;

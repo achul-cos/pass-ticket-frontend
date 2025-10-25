@@ -1,10 +1,8 @@
-<div class="w-full h-full p-8">
+<div class="w-full h-full">
 
-    <livewire:modals.tiket/>
-
-    <button class="btn" onclick="tiket.showModal()">open modal</button>
+    <livewire:navbar/>
     
-    <div class="w-full h-full flex flex-col gap-12">
+    <div class="w-full h-full flex flex-col gap-12 pt-24 p-8">
 
         <!-- Profil Saya -->
 
@@ -114,13 +112,13 @@
 
                     <!-- Tabel Desktop -->
 
-                    <table class="bg-blue/50 rounded-2xl border-2 border-black p-4 flex flex-col gap-y-4 max-lg:hidden ">
+                    <table class="bg-blue/50 rounded-2xl border-2 border-black p-4 w-full flex flex-col gap-y-4 max-lg:hidden ">
                         <tr class="grid grid-cols-14 gap-x-2">
                             <th class="col-span-1 w-full rounded-full items-center text-center bg-aqua p-2 text-black font-bold border-2 border-black">No</th>
                             <th class="col-span-3 w-full rounded-full items-center text-center bg-aqua p-2 text-black font-bold border-2 border-black">Nama Jadwal</th>
                             <th class="col-span-3 w-full rounded-full items-center text-center bg-aqua p-2 text-black font-bold border-2 border-black">Rute</th>
                             <th class="col-span-3 w-full rounded-full items-center text-center bg-aqua p-2 text-black font-bold border-2 border-black">Keberangkatan</th>
-                            <th class="col-span-2 w-full rounded-full items-center text-center bg-aqua p-2 text-black font-bold border-2 border-black">Status</th>
+                            <th class="col-span-2 w-full rounded-full items-center text-center bg-aqua p-2 text-black font-bold border-2 border-black">Harga</th>
                             <th class="col-span-2 w-full rounded-full items-center text-center bg-aqua p-2 text-black font-bold border-2 border-black">Detail</th>
                         </tr>
                         <tbody class="bg-aqua flex flex-col rounded-2xl border-2 border-black">
@@ -395,13 +393,13 @@
 
                     <!-- Tabel Desktop -->
 
-                    <table class="bg-blue/50 rounded-2xl border-2 border-black p-4 flex flex-col gap-y-4 max-lg:hidden ">
+                    <table class="bg-blue/50 rounded-2xl border-2 border-black w-full p-4 flex flex-col gap-y-4 max-lg:hidden ">
                         <tr class="grid grid-cols-14 gap-x-2">
                             <th class="col-span-1 w-full rounded-full items-center text-center bg-aqua p-2 text-black font-bold border-2 border-black">No</th>
                             <th class="col-span-3 w-full rounded-full items-center text-center bg-aqua p-2 text-black font-bold border-2 border-black">Nama Jadwal</th>
                             <th class="col-span-3 w-full rounded-full items-center text-center bg-aqua p-2 text-black font-bold border-2 border-black">Rute</th>
                             <th class="col-span-3 w-full rounded-full items-center text-center bg-aqua p-2 text-black font-bold border-2 border-black">Keberangkatan</th>
-                            <th class="col-span-2 w-full rounded-full items-center text-center bg-aqua p-2 text-black font-bold border-2 border-black">Status</th>
+                            <th class="col-span-2 w-full rounded-full items-center text-center bg-aqua p-2 text-black font-bold border-2 border-black">Harga</th>
                             <th class="col-span-2 w-full rounded-full items-center text-center bg-aqua p-2 text-black font-bold border-2 border-black">Detail</th>
                         </tr>
                         <tbody class="bg-aqua flex flex-col rounded-2xl border-2 border-black">
@@ -676,13 +674,13 @@
 
                     <!-- Tabel Desktop -->
 
-                    <table class="bg-blue/50 rounded-2xl border-2 border-black p-4 flex flex-col gap-y-4 max-lg:hidden ">
+                    <table class="bg-blue/50 rounded-2xl border-2 w-full border-black p-4 flex flex-col gap-y-4 max-lg:hidden ">
                         <tr class="grid grid-cols-14 gap-x-2">
                             <th class="col-span-1 w-full rounded-full items-center text-center bg-aqua p-2 text-black font-bold border-2 border-black">No</th>
                             <th class="col-span-3 w-full rounded-full items-center text-center bg-aqua p-2 text-black font-bold border-2 border-black">Nama Jadwal</th>
                             <th class="col-span-3 w-full rounded-full items-center text-center bg-aqua p-2 text-black font-bold border-2 border-black">Rute</th>
                             <th class="col-span-3 w-full rounded-full items-center text-center bg-aqua p-2 text-black font-bold border-2 border-black">Keberangkatan</th>
-                            <th class="col-span-2 w-full rounded-full items-center text-center bg-aqua p-2 text-black font-bold border-2 border-black">Status</th>
+                            <th class="col-span-2 w-full rounded-full items-center text-center bg-aqua p-2 text-black font-bold border-2 border-black">Harga</th>
                             <th class="col-span-2 w-full rounded-full items-center text-center bg-aqua p-2 text-black font-bold border-2 border-black">Detail</th>
                         </tr>
                         <tbody class="bg-aqua flex flex-col rounded-2xl border-2 border-black">
@@ -957,13 +955,13 @@
 
                     <!-- Tabel Desktop -->
 
-                    <table class="bg-blue/50 rounded-2xl border-2 border-black p-4 flex flex-col gap-y-4 max-lg:hidden ">
+                    <table class="bg-blue/50 rounded-2xl border-2 w-full border-black p-4 flex flex-col gap-y-4 max-lg:hidden ">
                         <tr class="grid grid-cols-14 gap-x-2">
                             <th class="col-span-1 w-full rounded-full items-center text-center bg-aqua p-2 text-black font-bold border-2 border-black">No</th>
                             <th class="col-span-3 w-full rounded-full items-center text-center bg-aqua p-2 text-black font-bold border-2 border-black">Nama Jadwal</th>
                             <th class="col-span-3 w-full rounded-full items-center text-center bg-aqua p-2 text-black font-bold border-2 border-black">Rute</th>
                             <th class="col-span-3 w-full rounded-full items-center text-center bg-aqua p-2 text-black font-bold border-2 border-black">Keberangkatan</th>
-                            <th class="col-span-2 w-full rounded-full items-center text-center bg-aqua p-2 text-black font-bold border-2 border-black">Status</th>
+                            <th class="col-span-2 w-full rounded-full items-center text-center bg-aqua p-2 text-black font-bold border-2 border-black">Harga</th>
                             <th class="col-span-2 w-full rounded-full items-center text-center bg-aqua p-2 text-black font-bold border-2 border-black">Detail</th>
                         </tr>
                         <tbody class="bg-aqua flex flex-col rounded-2xl border-2 border-black">
