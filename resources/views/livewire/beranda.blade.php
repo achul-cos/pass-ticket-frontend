@@ -11,8 +11,8 @@
     
                 <div class="flex flex-col">
                     <label for="pelabuhanAsal" class="text-xl font-medium mb-1">Pelabuhan Asal</label>
-                    <select name="pelabuhanAsal" class="p-2 rounded border border-gray-300 bg-[#FFFFFF] w-full">
-                        <option value=""disabled selected hidden>Pilih Pelabuhan Asal</option>
+                    <select name="pelabuhanAsal" class="p-2 rounded border border-black bg-abswhite w-full">
+                        <option value=""disabled selected>Pilih Pelabuhan Asal</option>
                         <option>Pelabuhan Asal 1</option>
                         <option>Pelabuhan Asal 2</option>
                         <option>Pelabuhan Asal 3</option>
@@ -21,8 +21,8 @@
     
                 <div class="flex flex-col">
                     <label for="pelabuhanTujuan" class="text-xl font-medium mb-1">Pelabuhan Tujuan</label>
-                    <select name="pelabuhanTujuan" class="p-2 rounded border border-gray-300 bg-[#FFFFFF] w-full">
-                        <option value=""disabled selected hidden>Pilih Pelabuhan Tujuan</option>
+                    <select name="pelabuhanTujuan" class="p-2 rounded border border-black bg-abswhite w-full">
+                        <option value=""disabled selected>Pilih Pelabuhan Tujuan</option>
                         <option>Pelabuhan Tujuan 1</option>
                         <option>Pelabuhan Tujuan 2</option>
                         <option>Pelabuhan Tujuan 3</option>
@@ -32,9 +32,9 @@
                 <div class="flex flex-col">
                     <label for="jadwalMasuk" class="text-xl font-medium mb-1">Jadwal Masuk Pelabuhan</label>
                     <div class="flex flex-col md:flex-row md:items-center gap-2">
-                        <input type="date" name="tanggalMasuk" class="p-2 rounded border border-gray-300 bg-[#FFFFFF] w-full">
-                        <select name="jamMasuk" class="p-2 rounded border border-gray-300 bg-[#FFFFFF] w-full">
-                            <option value=""disabled selected hidden>Pilih Jam</option>
+                        <input type="date" name="tanggalMasuk" class="p-2 rounded border border-black bg-abswhite w-full">
+                        <select name="jamMasuk" class="p-2 rounded border border-black bg-abswhite w-full">
+                            <option value=""disabled selected>Pilih Jam</option>
                             <option>10:00 - 11:00</option>
                             <option>11:00 - 12:00</option>
                             <option>12:00 - 13:00</option>
@@ -49,8 +49,8 @@
     
                 <div class="flex flex-col">
                     <label for="jenisKendaraan" class="text-xl font-medium mb-1">Jenis Kendaraan</label>
-                    <select name="jenisKendaraan" class="p-2 rounded border border-gray-300 bg-[#FFFFFF] w-full">
-                        <option value=""disabled selected hidden>Pilih Jenis Kendaraan</option>
+                    <select name="jenisKendaraan" class="p-2 rounded border border-black bg-abswhite w-full">
+                        <option value=""disabled selected>Pilih Jenis Kendaraan</option>
                         <option>Mobil</option>
                         <option>Motor</option>
                     </select>
@@ -58,8 +58,8 @@
     
                 <div class="flex flex-col">
                     <label for="penumpang" class="text-xl font-medium mb-1">Jenis Penumpang</label>
-                    <select name="penumpang" class="p-2 rounded border border-gray-300 bg-[#FFFFFF] w-full font-semibold">
-                        <option value=""disabled selected hidden>Pilih Jenis Penumpang</option>
+                    <select name="penumpang" class="p-2 rounded border border-black bg-abswhite w-full font-semibold">
+                        <option value=""disabled selected>Pilih Jenis Penumpang</option>
                         <option>Dewasa</option>
                         <option>Lansia</option>
                         <option>Anak</option>
@@ -68,7 +68,7 @@
                 </div>
             </div>
             <div class="flex justify-end mt-4">
-                <button type="submit" class="bg-yellow hover:bg-[#FFA000] text-white font-semibold px-6 py-2 rounded-lg transition duration-200">Cari Jadwal</button>
+                <button href="{{ route('rincian-tiket') }}" wire:navigate class="bg-yellow hover:bg-[#FFA000] text-abswhite font-semibold px-6 py-2 rounded-lg active:scale-90 transition duration-200">Cari Jadwal</button>
             </div>
         </section>
     
@@ -77,7 +77,7 @@
             <h2 class="text-2xl font-bold mb-4">Promo</h2>
             <div class="flex flex-col items-center justify-center py-10">
                 <div class="bg-blue rounded-full p-6 mb-4">
-                    <x-heroicon-o-x-mark class="w-10 h-10 text-white"/>
+                    <x-heroicon-o-x-mark class="w-10 h-10 text-abswhite"/>
                 </div>
                 <p class="text-lg font-semibold">Belum ada promo saat ini</p>
             </div>

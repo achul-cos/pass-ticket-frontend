@@ -4,33 +4,6 @@
 
     <div class="w-full h-full flex flex-col pt-20">
 
-        <div class="px-8 pt-4 justify-start">
-            @php
-                $breadcrumbs = [
-                    [
-                        'label' => 'Profil',
-                        'link' => '/profil',
-                    ],
-                    [
-                        'label' => 'E-Tiket',
-                    ],
-                    [
-                        'label' => '#0123456',
-                        'tooltip-bottom' => 'Ticket Digital Anda',
-                    ],
-                ];
-            @endphp
-            
-            <x-breadcrumbs
-                :items="$breadcrumbs"
-                class="gap-2 bg-dark/15 rounded-full w-fit p-2 px-4"
-                separator="m-minus"
-                separator-class=""
-                icon-class="text-warning"
-                link-item-class="text-sm font-bold"
-            />
-        </div>
-
         <form>
             <div class="p-8 bg-white w-full min-md:pb-12 rounded-b-2xl">
                 <div class="flex flex-col gap-8 h-full text-dark relative">
@@ -61,7 +34,7 @@
                                 <tr>
                                     <td class="min-w-[calc(100vw*0.2)]">Waktu Pembelian</td>
                                     <td class="px-2">:</td>
-                                    <td class="text-black text-shadow-white text-shadow-xl">10 November 2025,10.00 WIB</td>
+                                    <td class="text-black text-shadow-white text-shadow-xl">10 November 2025, 10.00 WIB</td>
                                 </tr>
                                 <tr>
                                     <td class="min-w-[calc(100vw*0.2)]">Harga Tiket</td>

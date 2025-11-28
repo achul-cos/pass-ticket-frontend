@@ -17,15 +17,15 @@
 
             <p data-aos="fade-left" data-aos-duration="1000" class="text-4xl font-extrabold text-black font-sans mb-8">Masuk</p>
 
-            <!-- Username Input -->
-            <input data-aos="fade-left" data-aos-duration="1000" type="text" placeholder="Username" class="max-w-96 max-md:max-w-full w-3/4 h-12 border-2 border-black rounded-full px-4">
+            <!-- Phone Number Input -->
+            <input data-aos="fade-left" data-aos-duration="1000" type="number" placeholder="No. Telepon" class="max-w-96 max-md:max-w-full w-3/4 h-12 bg-abswhite border-2 border-black rounded-full px-4">
 
             <!-- Password Input with Toggle -->
             <div data-aos="fade-left" data-aos-duration="1000" class="relative w-3/4 max-w-96 max-md:max-w-full" x-data="{ show: false }">
                 <input
                     :type="show ? 'text' : 'password'" 
                     placeholder="Password"
-                    class="w-full h-12 border-2 border-black rounded-full px-4 pr-12" />
+                    class="w-full h-12 bg-abswhite border-2 border-black rounded-full px-4 pr-12" />
 
                 <button type="button" class="absolute right-4 top-1/2 transform -translate-y-1/2" @click="show = !show">
                         <!-- Icon mata terbuka -->
@@ -36,7 +36,7 @@
             </div>
 
             <!-- Login Button -->
-            <button data-aos="fade-left" data-aos-duration="1000" class="w-3/4 max-w-96 max-md:max-w-full h-12 hover:border-2 border-black bg-blue active:scale-95 text-white font-bold rounded-full transition duration-50">Masuk</button>
+            <button href="{{ route('beranda') }}" wire:navigate data-aos="fade-left" data-aos-duration="1000" class="w-3/4 max-w-96 max-md:max-w-full h-12 hover:border-2 border-black bg-blue active:scale-95 text-white font-bold rounded-full transition duration-50">Masuk</button>
             <a data-aos="fade-left" data-aos-duration="1000" href="#" class="text-sm text-black font-italic hover:text-gray-600 transition duration-300 mt-8">Lupa Password? Hubungin Admin.</a>
         </div>
     </div>

@@ -16,25 +16,25 @@
             </div>
             <div class="min-h-full w-full bg-aqua rounded-2xl border-2 border-black p-8 flex flex-col gap-4">
                 <div class="text-xl font-bold">Nama Lengkap</div>
-                <input type="text" name="namaPengguna" id="namaPengguna" class="w-full rounded-2xl p-2 text-lg bg-white border-2 border-black/50 px-4" placeholder="Nama Lengkap" />
+                <input type="text" name="namaPengguna" id="namaPengguna" class="w-full rounded p-2 text-lg bg-abswhite border border-black px-4" placeholder="Nama Lengkap" />
                 <div class="min-md:flex-row max-md:flex-col flex gap-4 w-full">
                     <div class="w-full flex flex-col gap-4">
                         <div class="text-xl font-bold">Nomor Telepon</div>
-                        <input type="number" name="nomorTelepon" id="nomorTelepon" class="w-full rounded-2xl p-2 text-lg bg-white border-2 border-black/50 px-4" placeholder="Nomor Telepon" />
+                        <input type="number" name="nomorTelepon" id="nomorTelepon" class="w-full rounded p-2 text-lg bg-abswhite border border-black px-4" placeholder="Nomor Telepon" />
                     </div>
                     <div class="w-full flex flex-col gap-4">
                         <div class="text-xl font-bold">Email</div>
-                        <input type="email" name="email" id="email" class="w-full rounded-2xl p-2 text-lg bg-white border-2 border-black/50 px-4" placeholder="Email" />
+                        <input type="email" name="email" id="email" class="w-full rounded p-2 text-lg bg-abswhite border border-black px-4" placeholder="Email" />
                     </div>
                 </div>
                 <div class="min-md:flex-row max-md:flex-col flex gap-4 w-full">
                     <div class="w-full flex flex-col gap-4">
                         <div class="text-xl font-bold">Tanggal Lahir</div>
-                        <input type="date" name="tanggalLahir" id="tanggalLahir" class="w-full rounded-2xl p-2 text-lg bg-white border-2 border-black/50 px-4 text-black" placeholder="Nomor Telepon" />
+                        <input type="date" name="tanggalLahir" id="tanggalLahir" class="w-full rounded p-2 text-lg bg-abswhite border border-black px-4 text-black" placeholder="Nomor Telepon" />
                     </div>
                     <div class="w-full flex flex-col gap-4">
                         <div class="text-xl font-bold">Jenis Kelamin</div>
-                        <select name="email" id="email" class="w-full rounded-2xl p-2 text-lg bg-white border-2 border-black/50 px-4">
+                        <select name="email" id="email" class="w-full rounded p-2 text-lg bg-abswhite border border-black px-4">
                             <option value="" disabled selected>Pilih Jenis Kelamin</option>
                             <option value="pria">Pria</option>
                             <option value="wanita">Wanita</option>
@@ -42,7 +42,7 @@
                     </div>
                 </div>   
                 <div class="w-full flex flex-row items-end justify-end pt-4">
-                    <div class="p-2 px-4 bg-orange text-white font-bold text-xl border-2 border-black rounded-2xl cursor-pointer active:scale-90 transition-all duration-100">
+                    <div class="p-2 px-4 bg-yellow hover:bg-[#FFA000] text-white font-bold text-xl border border-black rounded-2xl cursor-pointer active:scale-90 transition duration-200">
                         Ubah Profil
                     </div>
                 </div>             
@@ -52,7 +52,7 @@
         <!-- Ticket Saya -->
 
         <div class="text-3xl text-black font-bold text-center w-full">
-            TICKET SAYA
+            TIKET SAYA
         </div>
 
         <div class="flex flex-col gap-8 p-8 bg-aqua rounded-2xl border-2 border-black h-full w-full">

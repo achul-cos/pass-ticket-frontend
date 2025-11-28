@@ -9,43 +9,43 @@
                 <div class="bg-aqua border-2 border-black rounded-2xl">
                     <div class="text-2xl max-md:text-lg text-black p-4 border-b-2 border-black">Informasi Pemesan</div>
                     <div class="p-4 flex flex-col gap-2 pb-8">
-                        <p class="py-2 text-lg text-black">Nama Pemesan</p>
-                        <input type="text" class="p-2 bg-white rounded-xl border-2 border-black" placeholder="Nama Lengkap Anda">
-                        <p class="py-2 text-lg text-black">Nomor Telepon</p>
-                        <input type="number" class="p-2 bg-white rounded-xl border-2 border-black" placeholder="0000-0000-0000">
+                        <p class="text-lg text-black">Nama Pemesan</p>
+                        <input type="text" class="p-2 bg-abswhite rounded border border-black" placeholder="Nama Lengkap Anda">
+                        <p class="text-lg text-black">Nomor Telepon</p>
+                        <input type="number" class="p-2 bg-abswhite rounded border border-black" placeholder="0000-0000-0000">
                     </div>
                 </div>
                 <p class="text-2xl max-md:text-lg font-bold text-black">Detail Kendaraan</p>
                 <div class="bg-aqua border-2 border-black rounded-2xl">
                     <div class="text-2xl max-md:text-lg text-black p-4 border-b-2 border-black">Kendaraan Penumpang</div>
                     <div class="p-4 flex flex-col gap-2 pb-8">
-                        <p class="py-2 text-lg text-black">Jenis Kendaraan</p>
-                        <select class="p-2 bg-white rounded-xl border-2 border-black" placeholder="Nama Lengkap Anda">
+                        <p class="text-lg text-black">Jenis Kendaraan</p>
+                        <select class="p-2 bg-abswhite rounded border border-black" placeholder="Nama Lengkap Anda">
                             <option value="" disabled selected>Pilih Jenis Kendaraan Anda</option>
                             <option value="motor">Motor</option>
                             <option value="mobil">Mobil</option>
                         </select>
-                        <p class="py-2 text-lg text-black">Nomor Kendaraan</p>
-                        <input type="text" class="p-2 bg-white rounded-xl border-2 border-black" placeholder="BPXXXXAA">
+                        <p class="text-lg text-black">Nomor Kendaraan</p>
+                        <input type="text" class="p-2 bg-abswhite rounded border border-black" placeholder="BPXXXXAA">
                     </div>
                 </div>                
                 <p class="text-2xl max-md:text-lg font-bold text-black">Detail Penumpang</p>
                 <div class="bg-aqua border-2 border-black rounded-2xl">
                     <div class="text-2xl max-md:text-lg text-black p-4 border-b-2 border-black">Identitas Penumpang 1</div>
                     <div class="p-4 flex flex-col gap-2 pb-8">
-                        <p class="py-2 text-lg text-black">Nama Penumpang 1</p>
-                        <input type="text" class="p-2 bg-white rounded-xl border-2 border-black" placeholder="Nama Penumpang 1">
-                        <p class="py-2 text-lg text-black">Nomor Identitas</p>
-                        <input type="text" class="p-2 bg-white rounded-xl border-2 border-black" placeholder="0123456789">
+                        <p class="text-lg text-black">Nama Penumpang 1</p>
+                        <input type="text" class="p-2 bg-abswhite rounded border border-black" placeholder="Nama Penumpang 1">
+                        <p class="text-lg text-black">Nomor Identitas</p>
+                        <input type="text" class="p-2 bg-abswhite rounded border border-black" placeholder="0123456789">
                     </div>
                 </div>                
                 <div class="bg-aqua border-2 border-black rounded-2xl">
                     <div class="text-2xl max-md:text-lg text-black p-4 border-b-2 border-black">Identitas Penumpang 2</div>
                     <div class="p-4 flex flex-col gap-2 pb-8">
-                        <p class="py-2 text-lg text-black">Nama Penumpang 2</p>
-                        <input type="text" class="p-2 bg-white rounded-xl border-2 border-black" placeholder="Nama Penumpang 2">
-                        <p class="py-2 text-lg text-black">Nomor Identitas</p>
-                        <input type="text" class="p-2 bg-white rounded-xl border-2 border-black" placeholder="0123456789">
+                        <p class="text-lg text-black">Nama Penumpang 2</p>
+                        <input type="text" class="p-2 bg-abswhite rounded border border-black" placeholder="Nama Penumpang 2">
+                        <p class="text-lg text-black">Nomor Identitas</p>
+                        <input type="text" class="p-2 bg-abswhite rounded border border-black" placeholder="0123456789">
                     </div>
                 </div>
                 <p class="text-sm">
@@ -147,7 +147,7 @@
             <input type="checkbox" id="persetujuan" name="persetujuan" value="1" class="bg-white absolute top-1" required>
             <p class="text-sm ms-5">Dengan ini saya menyetujui seluruh syarat dan ketentuan, serta kebijakan dari pelabuhan berdasarkan regulasi yang telah ditetapkan negara. Jika suatu hari saya kedapatan melanggar, saya menerima seluruh kosenkuensi termaksud jalur hukum dan pembatalan layanan pelabuhan secara sepihak.</p>
         </div>         
-        <button class="p-4 text-xl w-full rounded-full bg-orange border-dark text-white font-bold active:scale-98 duration-100 transition-all border-2">
+        <button href="{{ route('etiket') }}" wire:navigate class="p-4 text-xl w-full rounded-full bg-orange border-dark text-white font-bold active:scale-98 duration-100 transition-all border-2">
             Pesan
         </button>
     </div>

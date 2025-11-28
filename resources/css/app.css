@@ -49,7 +49,8 @@
     --color-aqua: #73C8D2;
     --color-blue: #0546d8;
     --color-black: #3A3023;
-    --color-dark: #9e6111;
+    --color-dark: #9E6111;
+    --color-abswhite: #FFFFFF;
 }
 
 @layer base {

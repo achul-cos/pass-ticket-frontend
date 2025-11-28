@@ -9,7 +9,7 @@
                 <p>Hari, d m y</p>
                 <p>Jenis Kendaraan, ~ Penumpang</p>
             </div>
-            <button class="bg-yellow hover:bg-[#FFA000] text-white font-semibold px-4 py-2 rounded-lg transition duration-200">Ubah Jadwal</button>
+            <button href="{{ route('beranda') }}" wire:navigate class="bg-yellow hover:bg-[#FFA000] text-white font-semibold px-4 py-2 rounded-lg active:scale-90 transition duration-200">Ubah Jadwal</button>
         </div>
     </div>
 
@@ -32,7 +32,7 @@
                     <p class="text-lg">Jenis Kendaraan</p>
                     <p class="font-bold text-xl">Jenis Kendaraan</p>
                     <p class="font-bold text-blue text-xl mt-2">Rp. 00.000</p>
-                    <button class="bg-yellow hover:bg-[#FFA000] text-white font-semibold px-8 py-2 rounded-lg mt-3 transition duration-200">Beli Tiket</button>
+                    <button href="{{ route('rincian-pemesanan') }}" wire:navigate class="bg-yellow hover:bg-[#FFA000] text-white font-semibold px-8 py-2 rounded-lg mt-3 active:scale-90 transition duration-200">Beli Tiket</button>
                 </div>
             </div>
         </section>

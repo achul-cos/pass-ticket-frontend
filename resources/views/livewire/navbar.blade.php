@@ -3,9 +3,9 @@
         <img src="{{ asset('img/logo/icon-emblem-horizon-cream.png') }}" alt="Logo" class="h-10">
     </div>
     <div class="flex items-center space-x-6">
-        <a href="{{ route('beranda') }}" wire:navigate class="text-black font-medium">Beranda</a>
+        <a href="{{ route('beranda') }}" wire:navigate class="text-black font-medium active:scale-90">Beranda</a>
         <div x-data="{ open: false }" class="relative">
-            <button @click="open = !open" class="flex items-center bg-orange hover:bg-[#E67A31] text-white font-semibold px-4 py-2 rounded-lg transition duration-200">
+            <button @click="open = !open" class="flex items-center bg-orange hover:bg-[#E67A31] text-white font-semibold px-4 py-2 rounded-lg active:scale-90 transition duration-200">
                 <x-heroicon-o-user class="w-5 h-5 mr-2"/>Akun
                 <x-heroicon-o-chevron-down class="w-4 h-4 ml-1"/>
             </button>
