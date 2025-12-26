@@ -8,12 +8,12 @@
             <div class="p-8 bg-white w-full min-md:pb-12 rounded-b-2xl">
                 <div class="flex flex-col gap-8 h-full text-dark relative">
                     <div class="flex min-md:flex-row max-md:flex-col justify-start max-md:gap-y-8 min-md:gap-8 items-start z-10">
-                        <div class="flex flex-col gap-8">
+                        <div class="flex flex-col gap-8 items-center min-md:items-start min-md: w-auto max-md:w-full">
                             <div class="text-xl font-bold py-1 px-2 bg-blue text-white ">
                                 Kode Tiket
                             </div>
-                            <div class="w-40 h-40">
-                                <img src="{{ asset('img/assets/qrcode_dummy.png') }}" alt="qrcode_tiket">
+                            <div class="w-40 h-40 max-md:w-76 max-md:h-76 max-sm:w-76 max-sm:h-76">
+                                <img src="{{ asset('img/assets/qrcode_dummy.png') }}" alt="qrcode_tiket" class="w-full h-full object-contain">
                             </div>
                         </div>
                         <div class="flex flex-col gap-8 max-md:pt-4">
