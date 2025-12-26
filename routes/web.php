@@ -14,5 +14,6 @@ Route::get('/login', Login::class)->name('login');
 Route::get('/loading', Loading::class)->name('loading');
 Route::get('/rinciantiket', RincianTiket::class)->name('rincian-tiket');
 Route::get('/etiket', ETiket::class)->name('etiket');
+Route::get('/etiket/{id}', ETiket::class)->name('etiket.id');
 Route::get('/profil', Profil::class)->name('profil');
 Route::get('/rincianpemesanan', RincianPemesanan::class)->name('rincian-pemesanan');
