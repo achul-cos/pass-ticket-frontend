@@ -17,10 +17,13 @@ class Beranda extends Component
     public ?string $searchJumlahPenumpang = null;
     public ?string $searchWaktuBerangkat = null;
 
+    public array $selectPenumpang = [];
 
     public function mount(): void
     {
         $this->fetchJadwals();
+
+        $this->selectPenumpang = array_fill(0, 6, null);
     }
 
     public function updated($property, $value): void
@@ -102,6 +105,15 @@ class Beranda extends Component
             $this->dispatch('modal-gagal', message: 'Maaf Data Jadwal Tidak Dapat DiTampilkan, Karena Terdapat Gangguan Di Server, Silahkan Hubungi Teknisi', title: 'Gagal Menampilkan Jadwal');
             $this->jadwals = [];
         }
+    }
+
+    public function pemesananTiket(int $id)
+    {
+        $this->redirectRoute('app.rincian-pemesanan', [
+            'id' => $id,
+            'kendaraan' => $this->searchJenisKendaraan,
+            'jumlahPenumpang' => $this->searchJumlahPenumpang,            
+        ], navigate: true);
     }
 
     public function render()

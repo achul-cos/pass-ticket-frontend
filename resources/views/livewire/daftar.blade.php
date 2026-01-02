@@ -1,4 +1,4 @@
-<main class="overflow-hidden col-span-12">
+<div class="overflow-hidden col-span-12">
     <div class="p-8 min-md:grid min-md:grid-cols-2 h-screen max-md:h-full max-md:flex max-md:flex-col max-md:gap-y-4">
         <div class="flex flex-col justify-center w-full h-full p-4 items-center gap-y-4">
 
@@ -54,4 +54,4 @@
             <p class="text-base text-white font-sans w-96 max-w-3/4 max-md:text-sm text-center">Aplikasi manajemen pelabuhan dalam mengelola jadwal keberangkatan kapal, pengguna aplikasi PASS dan monitoring PASS SCAN dan Pelabuhan.</p>
         </div>
     </div>
-</main>
+</div>

@@ -10,9 +10,20 @@
 
         <title>{{ $title ?? config('app.name') }}</title>
         @vite('resources/css/app.css')
+        @fluxAppearance
     </head>
     <body class="antialiased bg-white text-black min-h-screen" x-data="{ sidebarOpen: true }" x-init="window.addEventListener('sidebar-toggled', e => sidebarOpen = e.detail)">
-        {{ $slot }}
+        <div class="w-full h-full">
+        @if (request()->routeIs('app.*'))
+            <livewire:navbar :key="'navbar'" />
+
+            @if (request()->routeIs('app.rincian-pemesanan'))
+                <livewire:modal.modal-daftar/>
+            @endif
+        @endif        
+            {{ $slot }}
+        </div>
         @vite('resources/js/app.js')
+        @fluxScripts
     </body>
 </html>

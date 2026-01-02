@@ -1,4 +1,4 @@
-<main class="overflow-hidden col-span-12">
+<div class="overflow-hidden col-span-12">
     <div class="p-8 min-md:grid min-md:grid-cols-2 h-screen max-md:h-full max-md:flex max-md:flex-col max-md:gap-y-4">
         <div class="flex flex-row w-full h-full min-md:hidden justify-between">
             <p class="font-bold text-2xl">Ticket Management System</p>
@@ -40,4 +40,4 @@
             <a data-aos="fade-left" data-aos-duration="1000" href="#" class="text-sm text-black font-italic hover:text-gray-600 transition duration-300 mt-8">Lupa Password? Hubungin Admin.</a>
         </div>
     </div>
-</main>
+</div>
