@@ -215,7 +215,7 @@
                                 <div wire:click="pemesananTiket({{ (int) $t['id'] }})" class="py-2 px-4 bg-orange border-2 border-black text-xl font-bold rounded-full w-fit active:scale-95 duration-50 cursor-pointer" wire:navigate="">
                                     Pesan Tiket
                                 </div>
-                                <p class="font-italic text-sm text-right">*Belum termaksud pajak PPN ({{ $t['pajak'] ?? '11' }}%). Serta Syarat dan Ketentuan Berlaku</p>
+                                <p class="font-italic text-sm text-right">*Harga awal belum termaksud pajak PPN ({{ $t['pajak'] ?? '11' }}%). Serta Syarat dan Ketentuan Berlaku</p>
                             </div>                             
                         </div>                             
                     </div>

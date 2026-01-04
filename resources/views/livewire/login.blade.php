@@ -36,7 +36,7 @@
             </div>
 
             <!-- Login Button -->
-            <button href="{{ route('beranda') }}" wire:navigate data-aos="fade-left" data-aos-duration="1000" class="w-3/4 max-w-96 max-md:max-w-full h-12 hover:border-2 border-black bg-blue active:scale-95 text-white font-bold rounded-full transition duration-50">Masuk</button>
+            <button href="{{ route('app.beranda') }}" wire:navigate data-aos="fade-left" data-aos-duration="1000" class="w-3/4 max-w-96 max-md:max-w-full h-12 hover:border-2 border-black bg-blue active:scale-95 text-white font-bold rounded-full transition duration-50">Masuk</button>
             <a data-aos="fade-left" data-aos-duration="1000" href="#" class="text-sm text-black font-italic hover:text-gray-600 transition duration-300 mt-8">Lupa Password? Hubungin Admin.</a>
         </div>
     </div>

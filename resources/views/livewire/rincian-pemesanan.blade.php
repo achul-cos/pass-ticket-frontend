@@ -68,12 +68,12 @@
                     <div class="w-2/5 flex flex-col min-h-full p-4 bg-dark/10 border-s-2 border-dark border-dashed">
                         <div class="flex flex-row h-full gap-2 justify-between w-full">
                             <div class="flex flex-col gap-2 items-start">
-                                @if ($searchJumlahPenumpang !== null && $searchJenisKendaraan !== null && $searchJumlahPenumpang >= 1)
+                                @if ($jumlahPenumpang !== null && $selectJenisKendaraan !== null && $jumlahPenumpang >= 1)
                                     <p>Jenis Kendaraan</p>
                                     <p class="text-3xl font-black">
-                                        @if ($searchJenisKendaraan === 'mobil')
+                                        @if ($selectJenisKendaraan === 'mobil')
                                             Mobil
-                                        @elseif ($searchJenisKendaraan === 'motor')
+                                        @elseif ($selectJenisKendaraan === 'motor')
                                             Motor
                                         @else
                                             -
@@ -81,12 +81,12 @@
                                     </p>
                                     <p>Jumlah Penumpang</p>
                                     <p class="text-3xl font-black">
-                                        {{ $searchJumlahPenumpang ?? '-' }}
+                                        {{ $jumlahPenumpang ?? '-' }}
                                     </p>
                                 @endif
                             </div>
                             <div class="flex flex-col gap-2 items-end">
-                                @if ($searchJumlahPenumpang !== null && $searchJenisKendaraan !== null && $searchJumlahPenumpang >= 1 && $searchJenisKendaraan !== '')
+                                @if ($jumlahPenumpang !== null && $selectJenisKendaraan !== null && $jumlahPenumpang >= 1 && $selectJenisKendaraan !== '')
                                 <p>Harga</p>
 
                                 @if ($t['diskon'] == 0)
@@ -145,7 +145,7 @@
                             </div>
                         </div>
                         <div class="w-full flex flex-col gap-y-2 items-end">
-                            <p class="font-italic text-sm text-right">*Belum termaksud pajak PPN ({{ $t['pajak'] ?? '11' }}%). Serta Syarat dan Ketentuan Berlaku</p>
+                            <p class="font-italic text-sm text-right">*Harga awal belum termaksud pajak PPN ({{ $t['pajak'] ?? '11' }}%). Serta Syarat dan Ketentuan Berlaku</p>
                         </div>                             
                     </div>                             
                 </div>
@@ -160,21 +160,33 @@
                 <div class="p-4 flex flex-col gap-2 pb-8">
                     <div class="flex flex-col gap-y-4 border-b-2 border-black/50 py-2 pb-4 w-full">
                         <p class="text-lg text-black">Verifikasi Data</p>
-                        <input type="text" class="p-2 bg-abswhite rounded border border-black w-full" placeholder="Nomor Telepon atau Email anda">
-                        <input type="text" class="p-2 bg-abswhite rounded border border-black w-full" placeholder="Kata Sandi anda">
+                        <input wire:model.live="inputLoginPenumpang" type="text" class="p-2 bg-abswhite rounded border border-black w-full" placeholder="Nomor Telepon atau Email anda">
+                        <input wire:model.live="inputPasswordPenumpang" type="text" class="p-2 bg-abswhite rounded border border-black w-full" placeholder="Kata Sandi anda">
                         <div class="flex justify-between items-center">
                             <flux:modal.trigger name="modal-daftar">
                                 <flux:button class="underline bg-transparent! shadow-none! border-0! p-0! font-italic text-black opacity-50 cursor-pointer transform-transition duration-100 hover:no-underline! hover:opacity-100">Tidak Memiliki Akun? Daftar Sekarang</flux:button>
                             </flux:modal.trigger>
-                            <button class="bg-blue px-4 py-2 rounded-full w-fit text-white font-bold border-black/50 border-2 transition-transform active:scale-90 duration-100">
+                            <button @disabled(blank($inputLoginPenumpang) || blank($inputPasswordPenumpang)) wire:loading.attr="disabled" wire:click="fecthPenumpang" wire:target="fecthPenumpang" class="bg-blue px-4 py-2 rounded-full w-fit text-white font-bold border-black/50 border-2 transition-transform active:scale-90 disabled:active:scale-100 disabled:bg-gray-500 duration-100">
                                 Verifikasi
                             </button>
-                        </div>                      
+                            <div
+                                wire:loading.flex
+                                wire:target="fecthPenumpang, pesanTiket"
+                                class="fixed inset-0 z-[9999] items-center justify-center bg-dark/40 select-none overflow-hidden"
+                                role="status"
+                                aria-live="polite">
+                                
+                                <div wire:loading.delay class="flex flex-col items-center gap-4">
+                                    <img src="{{ asset('img/gif/pass_loading.gif') }}" alt="Loading" class="w-30 h-30" draggable="false">
+                                    <p class="font-bold italic text-2xl">Loading...</p>
+                                </div>
+                            </div>                            
+                        </div>                                  
                     </div>
                     <div class="flex flex-col gap-y-4 py-2 pb-4 w-full">
                         <p class="text-lg text-black font-bold">Identitas Pemesan</p>
-                        <p>Nama Pemesan : {{ $namaPemesan ?? '-' }}</p>
-                        <p>Nomor Telepon : {{ $nomorTelepon ?? '-' }}</p>
+                        <p>Nama Pemesan : {{ $dataNamaPenumpang ?? '-' }}</p>
+                        <p>Nomor Telepon : {{ $dataNomorTeleponPenumpang ?? '-' }}</p>
                     </div>
 
                 </div>
@@ -201,11 +213,11 @@
 
             <p class="text-2xl max-md:text-lg font-bold text-black">Detail Penumpang</p>
             @for ($i = 0; $i < $jumlahPenumpang; $i++)
-                <div wire:key="penumpang-wrapper-{{ $jenisKendaraan }}" class="bg-aqua border-2 border-black rounded-2xl">
+                <div wire:key="penumpang-wrapper-{{ $i }}" class="bg-aqua border-2 border-black rounded-2xl">
                     <div class="text-2xl max-md:text-lg text-black p-4 border-b-2 border-black">Identitas Penumpang {{ $i + 1 }}</div>
                     <div class="p-4 flex flex-col gap-2 pb-8">
                         <p class="text-lg text-black">Nama Penumpang</p>
-                        <input type="text" wire:model.live="selectPenumpang.{{ $i }}" class="p-2 bg-abswhite rounded border border-black" placeholder="Nama Penumpang">
+                        <input type="text" wire:model.live="penumpang.{{ $i }}" class="p-2 bg-abswhite rounded border border-black" placeholder="Nama Penumpang">
                     </div>
                 </div>
             @endfor
@@ -218,6 +230,16 @@
                 @endif
                 class="flex items-center justify-center gap-4 bg-yellow hover:bg-[#FFA000] text-white rounded-lg px-6 py-3 font-bold active:scale-97 transition duration-200 disabled:bg-gray-400 disabled:cursor-not-allowed disabled:active:scale-100"
             >Tambah Penumpang</button>
+
+            @if ($jumlahPenumpang > 1)
+            <button
+                type="button"
+                wire:click="kurangiPenumpang"
+                class="flex items-center justify-center gap-4 bg-red-500 hover:bg-red-700 text-white rounded-lg px-6 py-3 font-bold active:scale-97 transition duration-200"
+            >
+                Kurangi Penumpang
+            </button>
+            @endif
 
             <p class="text-sm">
                 Note :
@@ -371,10 +393,10 @@
         </div>            
     </div>
     <div class="flex flex-row gap-2 relative justify-start">
-        <input type="checkbox" id="persetujuan" name="persetujuan" value="1" class="bg-white absolute top-1" required>
+        <input type="checkbox" id="persetujuan" name="persetujuan" wire:model.live="persetujuan" class="bg-white absolute top-1" required>
         <p class="text-sm ms-5">Dengan ini saya menyetujui seluruh syarat dan ketentuan, serta kebijakan dari pelabuhan berdasarkan regulasi yang telah ditetapkan negara. Jika suatu hari saya kedapatan melanggar, saya menerima seluruh kosenkuensi termaksud jalur hukum dan pembatalan layanan pelabuhan secara sepihak.</p>
     </div>         
-    <button wire:navigate class="p-4 text-xl w-60 rounded-full bg-orange border-dark text-white font-bold active:scale-90 duration-100 transition-all border-2 mx-auto">
+    <button wire:click="pesanTiket" wire:target="pesanTiket" wire:loading.attr="disabled" @disabled(!$this->siapPesan) class="p-4 text-xl w-60 rounded-full bg-orange border-dark text-white font-bold active:scale-90 disabled:active:scale-100 disabled:bg-gray-500 disabled:border-black duration-100 transition-all border-2 mx-auto">
         Pesan
     </button>
 </div>

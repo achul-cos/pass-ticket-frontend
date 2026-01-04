@@ -14,6 +14,7 @@
     </head>
     <body class="antialiased bg-white text-black min-h-screen" x-data="{ sidebarOpen: true }" x-init="window.addEventListener('sidebar-toggled', e => sidebarOpen = e.detail)">
         <div class="w-full h-full">
+        <livewire:modals.modal-gagal />
         @if (request()->routeIs('app.*'))
             <livewire:navbar :key="'navbar'" />
 
