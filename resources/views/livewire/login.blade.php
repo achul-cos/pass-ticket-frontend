@@ -1,28 +1,41 @@
 <div class="overflow-hidden col-span-12">
+    <div
+        wire:loading.flex
+        wire:target="doLogin"
+        class="fixed inset-0 z-[9999] items-center justify-center bg-dark/40 select-none overflow-hidden"
+        role="status"
+        aria-live="polite">
+        
+        <div wire:loading.delay class="flex flex-col items-center gap-4">
+            <img src="{{ asset('img/gif/pass_loading.gif') }}" alt="Loading" class="w-30 h-30" draggable="false">
+            <p class="font-bold italic text-2xl">Loading...</p>
+        </div>
+    </div>     
     <div class="p-8 min-md:grid min-md:grid-cols-2 h-screen max-md:h-full max-md:flex max-md:flex-col max-md:gap-y-4">
         <div class="flex flex-row w-full h-full min-md:hidden justify-between">
             <p class="font-bold text-2xl">Ticket Management System</p>
             <img src="{{ asset('img/logo/icon-text-emblem-horizon-blue.png') }}" alt="logo" class="self-center h-auto w-36 mb-4">        
         </div>
-        <div data-aos="fade-right" data-aos-duration="1000" class="bg-blue flex flex-col gap-y-4 max-md:py-6 max-md:gap-y-5 items-center justify-center w-full h-full rounded-lg border-black border-2 bg-[url(../../public/img/pattren/Square-Pattern1-Cream.png)] bg-cover bg-center">
+        <div wire:ignore data-aos="fade-right" data-aos-once="true" data-aos-duration="1000" class="bg-blue flex flex-col gap-y-4 max-md:py-6 max-md:gap-y-5 items-center justify-center w-full h-full rounded-lg border-black border-2 bg-[url(../../public/img/pattren/Square-Pattern1-Cream.png)] bg-cover bg-center">
             <img src="{{ asset('img/logo/icon-text-emblem-square-cream.png') }}" alt="logo" class="w-auto h-32">
             <p class="text-3xl font-bold text-white font-sans w-80 text-center max-md:w-3/4">PASS Ticket</p>
             <p class="text-base text-white font-sans w-96 max-w-3/4 max-md:text-sm text-center">Aplikasi manajemen pelabuhan dalam mengelola jadwal keberangkatan kapal, pengguna aplikasi PASS dan monitoring PASS SCAN dan Pelabuhan.</p>
         </div>
         <div class="flex flex-col justify-center w-full h-full p-4 items-center gap-y-4">
 
-            <div data-aos="flip-right" data-aos-duration="1000" class="max-md:hidden absolute top-8 right-8 flex items-center gap-4 text-black font-italic">
+            <a data-aos="flip-right" wire:navigate href="{{ route('app.beranda') }}" data-aos-duration="1000" data-aos-once="true" wire:ignore class="max-md:hidden absolute top-8 right-8 flex items-center gap-4 text-black font-italic">
                 <img src="{{ asset('img/logo/icon-text-emblem-horizon-blue.png') }}" alt="logo" class="h-auto w-48">
-            </div>
+            </a>
 
-            <p data-aos="fade-left" data-aos-duration="1000" class="text-4xl font-extrabold text-black font-sans mb-8">Masuk</p>
+            <p data-aos="fade-left" data-aos-duration="1000" data-aos-once="true" wire:ignore class="text-4xl font-extrabold text-black font-sans mb-8">Masuk</p>
 
-            <!-- Phone Number Input -->
-            <input data-aos="fade-left" data-aos-duration="1000" type="number" placeholder="No. Telepon" class="max-w-96 max-md:max-w-full w-3/4 h-12 bg-abswhite border-2 border-black rounded-full px-4">
+            <!-- Login Input -->
+            <input wire:model="login" data-aos="fade-left" data-aos-duration="1000" data-aos-once="true" type="text" wire:ignore placeholder="Nomor Telepon atau Email Anda" class="max-w-96 max-md:max-w-full w-3/4 h-12 bg-abswhite border-2 border-black rounded-full px-4">
 
             <!-- Password Input with Toggle -->
-            <div data-aos="fade-left" data-aos-duration="1000" class="relative w-3/4 max-w-96 max-md:max-w-full" x-data="{ show: false }">
+            <div data-aos="fade-left" data-aos-duration="1000" data-aos-once="true" wire:ignore class="relative w-3/4 max-w-96 max-md:max-w-full" x-data="{ show: false }">
                 <input
+                    wire:model="password"
                     :type="show ? 'text' : 'password'" 
                     placeholder="Password"
                     class="w-full h-12 bg-abswhite border-2 border-black rounded-full px-4 pr-12" />
@@ -36,8 +49,8 @@
             </div>
 
             <!-- Login Button -->
-            <button href="{{ route('app.beranda') }}" wire:navigate data-aos="fade-left" data-aos-duration="1000" class="w-3/4 max-w-96 max-md:max-w-full h-12 hover:border-2 border-black bg-blue active:scale-95 text-white font-bold rounded-full transition duration-50">Masuk</button>
-            <a data-aos="fade-left" data-aos-duration="1000" href="#" class="text-sm text-black font-italic hover:text-gray-600 transition duration-300 mt-8">Lupa Password? Hubungin Admin.</a>
+            <button wire:click="doLogin" wire:ignore wire:target="doLogin" data-aos="fade-left" data-aos-duration="1000" data-aos-once="true" class="w-3/4 max-w-96 max-md:max-w-full h-12 hover:border-2 border-black bg-blue active:scale-95 text-white font-bold rounded-full transition duration-50">Masuk</button>
+            <a wire:ignore data-aos="fade-left" data-aos-duration="1000" data-aos-once="true" href="{{ route('daftar') }}" wire:navigate class="text-sm text-black font-italic hover:text-gray-600 transition duration-300 mt-8">Belum Memiliki Akun? Daftar Disini.</a>
         </div>
     </div>
 </div>

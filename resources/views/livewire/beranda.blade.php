@@ -1,5 +1,5 @@
 <div class="w-full h-full p-8 bg-white flex flex-col gap-8 pt-24">
-    <h1 class="text-3xl font-bold">Selamat Datang!</h1>
+    <h1 class="text-3xl font-bold">Selamat Datang! {{ auth('penumpang')->check() ? ', '.auth('penumpang')->user()->name : '' }}</h1>
     <!-- Section Tiket -->
     <section class="w-full bg-aqua p-6 rounded-xl border-3 border-black">
         <h2 class="text-2xl font-bold mb-4">Pencarian Jadwal</h2>

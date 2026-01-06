@@ -194,7 +194,7 @@ class RincianPemesanan extends Component
                 return;
             }
 
-            $this->redirectRoute('app.etiket.id', ['id' => $tiketId]);
+            $this->redirectRoute('app.etiket.id', ['id' => $tiketId], navigate: true);
         } catch (\Throwable $th) {
             $this->dispatch('modal-gagal', message: 'Gagal membuat tiket. Silahkan coba lagi atau hubungi admin/teknisi.', title: 'Gagal');
         }

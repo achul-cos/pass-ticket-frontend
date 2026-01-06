@@ -125,6 +125,15 @@ return [
 
     'aliases' => [
         'QrCode' => SimpleSoftwareIO\QrCode\Facades\QrCode::class,
-    ],    
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Favicon
+    |--------------------------------------------------------------------------
+    |
+    */
+
+    'favicon' => env('APP_FAVICON', 'img/logo/icon-emblem-square-blue.png'),    
 
 ];

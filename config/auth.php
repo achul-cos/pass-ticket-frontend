@@ -40,6 +40,10 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+        'penumpang' => [
+            'driver' => 'session',
+            'provider' => 'penumpangs',
+        ],        
     ],
 
     /*
@@ -64,6 +68,11 @@ return [
             'driver' => 'eloquent',
             'model' => env('AUTH_MODEL', App\Models\User::class),
         ],
+        
+        'penumpangs' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Penumpang::class,
+        ],        
 
         // 'users' => [
         //     'driver' => 'database',

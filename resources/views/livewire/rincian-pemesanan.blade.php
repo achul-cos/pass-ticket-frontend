@@ -163,9 +163,9 @@
                         <input wire:model.live="inputLoginPenumpang" type="text" class="p-2 bg-abswhite rounded border border-black w-full" placeholder="Nomor Telepon atau Email anda">
                         <input wire:model.live="inputPasswordPenumpang" type="text" class="p-2 bg-abswhite rounded border border-black w-full" placeholder="Kata Sandi anda">
                         <div class="flex justify-between items-center">
-                            <flux:modal.trigger name="modal-daftar">
-                                <flux:button class="underline bg-transparent! shadow-none! border-0! p-0! font-italic text-black opacity-50 cursor-pointer transform-transition duration-100 hover:no-underline! hover:opacity-100">Tidak Memiliki Akun? Daftar Sekarang</flux:button>
-                            </flux:modal.trigger>
+                            @if(!auth('penumpang')->check())
+                                <a href="{{ route('daftar') }}" wire:navigate class="underline bg-transparent! shadow-none! border-0! p-0! font-italic text-black opacity-50 cursor-pointer transform-transition duration-100 hover:no-underline! hover:opacity-100">Tidak Memiliki Akun? Daftar Sekarang</a>
+                            @endif
                             <button @disabled(blank($inputLoginPenumpang) || blank($inputPasswordPenumpang)) wire:loading.attr="disabled" wire:click="fecthPenumpang" wire:target="fecthPenumpang" class="bg-blue px-4 py-2 rounded-full w-fit text-white font-bold border-black/50 border-2 transition-transform active:scale-90 disabled:active:scale-100 disabled:bg-gray-500 duration-100">
                                 Verifikasi
                             </button>
